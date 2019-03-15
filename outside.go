@@ -6,12 +6,13 @@ package outside
 
 import (
 	"errors"
-	. "github.com/tHinqa/outside/types"
 	"math"
 	r "reflect"
 	"runtime"
 	"syscall"
 	"unsafe"
+
+	. "github.com/tHinqa/outside/types"
 )
 
 //import . "fmt"
@@ -798,7 +799,10 @@ func GetData(e EP) interface{} {
 	return r.NewAt(t, unsafe.Pointer(p.addr())).Interface()
 }
 
-func callN(trap, nargs uintptr, a1 *uintptr) (r1, r2 uintptr, f float64, err syscall.Errno)
+func callN(trap, nargs uintptr, a1 *uintptr) (r1, r2 uintptr, f float64, err syscall.Errno) {
+	//TODO:
+	return 0, 0, 0.0, 0
+}
 
 func (sp *sproc) call(a ...uintptr) (r1, r2 uintptr, f float64, lastErr error) {
 	var aptr *uintptr
